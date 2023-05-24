@@ -16,6 +16,7 @@ class MaintenanceMode
      */
     public function handle(Request $request, Closure $next)
     {
+        // Kiem tra
         if(env('APP_MAINTENANCE')){
          return response("We'll back soon :D");
         }
