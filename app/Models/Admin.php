@@ -7,15 +7,16 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthAuthenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model implements AuthAuthenticatable
+class Admin extends Model implements AuthAuthenticatable
 {
     use HasFactory;
     use Authenticatable;
-    use HasFactory;
+    // protected $guard = 'admin';
 
     protected $fillable = [
         'name',
         'email',
         'password',
+        'role',
     ];
 }
