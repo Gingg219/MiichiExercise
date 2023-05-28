@@ -13,11 +13,13 @@
           <div>
             <p class="message">Admin</p>
           </div>
-          <form class="register-form">
-            <input type="text" placeholder="name"/>
-            <input type="password" placeholder="password"/>
-            <input type="text" placeholder="email address"/>
-            <button>create</button>
+          <form class="register-form" action="{{ route('admin.registering') }}" method="POST">
+            @csrf
+            <input type="text" placeholder="name" name="name" value="{{ old('name') }}" />
+            <input type="text" placeholder="email address" name="email" value="{{ old('email') }}" />
+            <input type="password" placeholder="password" name="password" value="{{ old('password') }}" />
+            <input type="hidden" name="role" value="1" />
+            <button type="submit">create</button>
             <p class="message">Already registered? <a href="{{ route('admin.login') }}">Sign In</a></p>
           </form>
         </div>

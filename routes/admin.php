@@ -8,6 +8,7 @@ Route::middleware(['guest:admin'])->group(function () {
     Route::get('/login', [AdminAuthController::class, 'login'])->name('login');
     Route::post('/login', [AdminAuthController::class, 'login_handler'])->name('login_handler');
     Route::get('/register', [AdminAuthController::class, 'register'])->name('register');
+    Route::post('/register', [AdminAuthController::class, 'registering'])->name('registering');
 });
 Route::middleware(['auth:admin'])->group(function () {
     Route::get('/home', [AdminController::class, 'home'])->name('home');

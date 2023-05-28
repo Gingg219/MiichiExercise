@@ -27,7 +27,7 @@
             <input type="text" placeholder="email" name="email" value="{{ old('email') }}" />
             <input type="password" placeholder="password" name="password" />
             <button type="submit">login</button>
-            <p class="message"><a href="{{ route('client.register') }}">Logout</a></p>
+            <p class="message">Not registered? <a href="{{ route('client.register') }}">Create an account</a></p>
           </form>
         </div>
       </div>
