@@ -9,15 +9,25 @@
 </head>
 <body>
     <div class="login-page">
+      @if ($errors->any())
+          <div class="alert alert-danger">
+              <ul>
+                  @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                  @endforeach
+              </ul>
+          </div>
+      @endif
       <div class="form">
           <div>
             <p class="message">User</p>
           </div>
-          <form class="login-form">
-            <input type="text" placeholder="username"/>
-            <input type="password" placeholder="password"/>
-            <button>login</button>
-            <p class="message">Not registered? <a href="{{ route('client.register') }}">Create an account</a></p>
+          <form class="login-form" action="{{ route('client.login_handler') }}" method="POST">
+            @csrf
+            <input type="text" placeholder="email" name="email" value="{{ old('email') }}" />
+            <input type="password" placeholder="password" name="password" />
+            <button type="submit">login</button>
+            <p class="message"><a href="{{ route('client.register') }}">Logout</a></p>
           </form>
         </div>
       </div>
