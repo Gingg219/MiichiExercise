@@ -31,6 +31,7 @@ class AuthController extends Controller
         if (!Hash::check($request->password, $admin->password)) {
             $checkAdmin=false;
         }
+        session()->put('role', $admin->role);
         if (!empty($admin)&&$checkAdmin) {
             Auth::guard('admin')->login($admin);
             return redirect()->route('admin.home');

@@ -20,8 +20,13 @@
                 Logout
             </a>
             <form action="{{ route('admin.logout') }}" method="POST" id="logout-form">
-              @csrf
+                @csrf
             </form>
+            <div>
+                <a href="{{ route('admin.users.index') }}" class="message">
+                    LIST USER
+                </a>
+            </div>
         </div>
     </div>
 </body>

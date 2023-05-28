@@ -19,6 +19,7 @@ class Kernel extends HttpKernel
 
         // Khai bao
         \App\Http\Middleware\MaintenanceMode::class,
+        \App\Http\Middleware\MaintenanceMode::class,
 
         \Fruitcake\Cors\HandleCors::class,
         \App\Http\Middleware\PreventRequestsDuringMaintenance::class,
