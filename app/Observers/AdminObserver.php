@@ -15,7 +15,8 @@ class AdminObserver
      */
     public function created(Admin $admin)
     {
-        $admin->notify(new AdminRegisterNotificationMail($admin));
+        $delay = now()->addSecond(30);
+        $admin->notify((new AdminRegisterNotificationMail($admin))->delay($delay));
     }
 
     /**
